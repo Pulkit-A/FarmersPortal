@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crop Shop|Farmers Portal</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <div class="header">
+    <div class="container"></div>
+
+    <div class="navbar">
+        <div class="logo">
+            <img src="images/logo-removebg-preview.png" width="125px" alt="">
+
+        </div>
+        <nav>
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="">Crops</a></li>
+              <li><a href="">About</a></li>
+              <li><a href="policies.html">Policies</a></li>
+              <li><a href="learning.html">Education</a></li>
+              <li><a href="">Account</a></li>
+              
+                
+            </ul>
+        </nav>
+        <a href="cart.html"><img src="images/cart.png" width="30px" height="30px"></a>
+        <img src="images/menu.png" class="menu-icon">
+    </div>
+ <!-----------cart item---------->
+
+ <div class="small-container">
+   <table>
+     <tr>
+        <th>Product</th>
+        <th>Quantity</th>
+        <th>Subtotal</th>
+         </tr>
+      <tr>
+        <td>
+          
+          <div class="cartinfo">
+            <img src="">
+            <div>
+              <p>product name</p>
+              <small>price:</small>
+              <br>
+              <a href="">remove</a>
+
+            </div>
+            
+          </div>
+        </td>
+        <td><input type="number" value="1"></td>
+        <td>Subtotal</td>
+      </tr>
+      <tr>
+        <td>
+          
+          <div class="cartinfo">
+            <img src="">
+            <div>
+              <p>product name</p>
+              <small>price:</small>
+              <br>
+              <a href="">remove</a>
+
+            </div>
+            
+          </div>
+        </td>
+        <td><input type="number" value="1"></td>
+        <td>Subtotal</td>
+      </tr>
+      <tr>
+        <td>
+          
+          <div class="cartinfo">
+            <img src="">
+            <div>
+              <p>product name</p>
+              <small>price:</small>
+              <br>
+              <a href="">remove</a>
+
+            </div>
+            
+          </div>
+        </td>
+        <td><input type="number" value="1"></td>
+        <td>Subtotal</td>
+      </tr>
+      <tr>
+        <td>
+          
+          <div class="cartinfo">
+            <img src="">
+            <div>
+              <p>product name</p>
+              <small>price:</small>
+              <br>
+              <a href="">remove</a>
+
+            </div>
+            
+          </div>
+        </td>
+        <td><input type="number" value="1"></td>
+        <td>Subtotal</td>
+      </tr>
+ </table>
+
+
+ <div class="total-price">
+   <table>
+     <tr>
+       <td>subtotal</td>
+       <td>$200.00</td>
+     </tr>
+     <tr>
+       <td>Tax</td>
+       <td>$20.00</td>
+     </tr>
+     <tr>
+       <td>Total</td>
+       <td>$220.00</td>
+     </tr>
+
+   </table>
+
+
+   
+ </div>
+
+
+
+
+
+
+
+ </div>
+
+<!-------------footer--------------->
+<div class="footer">
+    <div class="container">
+        <div class="row">
+            <div class="footer-col-1">
+                <h3>Download Our App</h3>
+                <p>Download App for Android and ios mobile phones</p>
+                <div class="app-logo">
+                    <img src="images/play-store.png">
+                    <img src="images/play-store.png">
+                </div>
+            </div>
+            <div class="footer-col-2">
+                <img src="images/logo-removebg-preview.png" alt="">
+                <p>Our Purpose is to Make the crops of Farmers to reach naitonwide</p>
+            </div>
+            <div class="footer-col-3">
+                <h3>Useful Links</h3>
+                <ul>
+                    <li>Coupons</li>
+                    <li>Blog Post</li>
+                    <li>Refund Policy</li>
+                    <li>Join Affiliate</li>
+                </ul>
+            </div>
+            <div class="footer-col-4">
+                <h3>Follow us</h3>
+                <ul>
+                    <li>Facebook</li>
+                    <li>Twitter</li>
+                    <li>Instagram</li>
+                    <li>Youtube</li>
+                </ul>
+            </div>
+        </div>
+        <hr>
+        <p class="copyright">Copyright 2020 - Code Breakers</p>
+    </div>
+</div>
+</body>
+<style type="text/css">
+  .small-container{
+    margin: 80px auto;
+  }
+table{
+  width: 100%;
+  border-collapse: collapse;  
+}
+.cartinfo{
+  display: flex;
+  flex-wrap: wrap;
+}
+th{
+  text-align: left;
+  padding: 5px;
+  color:#fff;
+  background: #ff523b;
+}
+td{
+  padding: 10px 5px;
+}
+td input{
+  width: 40px;
+  height: 30px;
+  padding: 5px;
+}
+td a {
+  color: #ff523b;
+  font-size: 12px;
+}
+td img{
+  width: 80px;
+  height: 80px;
+  margin-right: 10px; 
+}
+.total-price{
+  display: flex;
+  justify-content: flex-end;
+}
+.total-price table{
+  border-top: 3px solid #ff523b;
+  width: 100%
+  max-width:auto;
+}
+td:last-child{
+  text-align: right;
+}
+th:last-child{
+  text-align: right;
+
+}
+.cartinfo p{
+  display: none;
+}
+</style>
+</html>

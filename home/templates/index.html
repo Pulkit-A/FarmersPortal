@@ -18,7 +18,7 @@
 
     <div class="navbar">
         <div class="logo">
-            <img src="images/logo-removebg-preview.png" width="125px" alt="">
+            <img src="{% static 'logo-removebg-preview.png' %}" width="125px" alt="">
 
         </div>
         <nav>
@@ -31,18 +31,18 @@
                 
             </ul>
         </nav>
-        <img src="images/cart.png" width="30px" height="30px">
-        <img src="images/menu.png" class="menu-icon">
+        <img src="{% static 'cart.png' %}" width="30px" height="30px">
+        <img src="{% static 'menu.png' %}" class="menu-icon">
     </div>
     <div class="row">
         <div class="col-2">
             <h1>Buying<br>Made Easy</h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem veritatis quasi maiores!</p>
+            <p>CROP SHOP is a digital B2B market solution that brings together Farmers and Industrial Buyers.</p>
             <a href="" class="btn">Explore Now &#8594;</a>
        
         </div>
         <div class="col-2">
-            <img src="images/farmer-clipart-transparent-background-4.png" alt="">
+            <img src="{% static 'farmer-clipart-transparent-background-4.png'%}" alt="">
         </div>
     </div>
 </div>
@@ -53,13 +53,13 @@
         <div class="small-container">
             <div class="row">
                 <div class="col-3">
-                    <img src="images/pic1.jpg" width="350">
+                    <img src="{% static 'pic1.jpg'%}" width="350">
                 </div>
                 <div class="col-3">
-                    <img src="images/pic 2.jpg" width="350">
+                    <img src="{% static 'pic 2.jpg'%}" width="350">
                 </div>
                 <div class="col-3">
-                    <img src="images/blurred-background-close-up-crop.jpg" width="350">
+                    <img src="{% static 'blurred-background-close-up-crop.jpg'%}" width="350">
                 </div>
             </div>
         </div>
@@ -70,9 +70,11 @@
     <div class="small-container">
         <h2 class="title">Season Crops</h2>
         <div class="row">
+            {% for crop in Crops %}
             <div class="col-4">
-                <img src="images/season1.jpg">
-                <h4>Lettuce </h4>
+                {% if crop.id < 5 %}
+                <img src={{crop.image.url}}>
+                <h4> {{ crop.name }} </h4>
                 <div class="rating">
                     <i class="fa fa-star" ></i>
                     <i class="fa fa-star" ></i>
@@ -81,55 +83,19 @@
                     <i class="fa fa-star-o"></i>
 
                 </div>
-                <p>₹4000/kg</p>
+                <p>₹{{ crop.msp }}/kg</p>
+                {% endif %}
             </div>
-            <div class="col-4">
-                <img src="images/season2.jpg">
-                <h4>Kale </h4>
-                <div class="rating">
-                    <i class="fa fa-star" ></i>
-                    <i class="fa fa-star" ></i>
-                    <i class="fa fa-star" ></i>
-                    <i class="fa fa-star" ></i>
-                    <i class="fa fa-star-o"></i>
-
-                </div>
-                <p>₹4000/kg</p>
-            </div>
-            <div class="col-4">
-                <img src="images/season 3.jpg">
-                <h4>Spinach </h4>
-                <div class="rating">
-                    <i class="fa fa-star" ></i>
-                    <i class="fa fa-star" ></i>
-                    <i class="fa fa-star" ></i>
-                    <i class="fa fa-star" ></i>
-                    <i class="fa fa-star-o"></i>
-
-                </div>
-                <p>₹4000/kg</p>
-            </div>
-            <div class="col-4">
-                <img src="images/season 4.jpg">
-                <h4>Carrot </h4>
-                <div class="rating">
-                    <i class="fa fa-star" ></i>
-                    <i class="fa fa-star" ></i>
-                    <i class="fa fa-star" ></i>
-                    <i class="fa fa-star" ></i>
-                    <i class="fa fa-star-o"></i>
-
-                </div>
-                <p>₹4000/kg</p>
-            </div>
-            
+            {% endfor %}
         </div>
     </div>
     <h2 class="title">Pre-Season Crops</h2>
     <div class="row">
+        {% for crop in Crops %}
         <div class="col-4">
-            <img src="images/Allseason1 (1).jpg">
-            <h4>Tomato </h4>
+            {% if crop.id > 4 and crop.id < 9 %}
+            <img src="{{crop.image.url}}">
+            <h4> {{ crop.name }} </h4>
             <div class="rating">
                 <i class="fa fa-star" ></i>
                 <i class="fa fa-star" ></i>
@@ -138,66 +104,33 @@
                 <i class="fa fa-star-o"></i>
 
             </div>
-            <p>₹4000/kg</p>
+            <p>₹{{ crop.msp }}/kg</p>
+            {% endif %}
         </div>
-        <div class="col-4">
-            <img src="images/Allseason2.jpg">
-            <h4>Pepper </h4>
-            <div class="rating">
-                <i class="fa fa-star" ></i>
-                <i class="fa fa-star" ></i>
-                <i class="fa fa-star" ></i>
-                <i class="fa fa-star" ></i>
-                <i class="fa fa-star-o"></i>
-
-            </div>
-            <p>₹4000/kg</p>
-        </div>
-        <div class="col-4">
-            <img src="images/Allseason3.jpg">
-            <h4>Eggplant </h4>
-            <div class="rating">
-                <i class="fa fa-star" ></i>
-                <i class="fa fa-star" ></i>
-                <i class="fa fa-star" ></i>
-                <i class="fa fa-star" ></i>
-                <i class="fa fa-star-o"></i>
-
-            </div>
-            <p>₹4000/kg</p>
-        </div>
-        <div class="col-4">
-            <img src="images/Allseason4.jpg">
-            <h4>Okra </h4>
-            <div class="rating">
-                <i class="fa fa-star" ></i>
-                <i class="fa fa-star" ></i>
-                <i class="fa fa-star" ></i>
-                <i class="fa fa-star" ></i>
-                <i class="fa fa-star-o"></i>
-
-            </div>
-            <p>₹4000/kg</p>
-        </div>
-        
+        {% endfor %}
     </div>
 </div>
 <!----------Biding---------->
        <div class="offer">
            <div class="small-container">
+                {% for crop in Crops %}
                <div class="row">
+                   {% if crop.id == 9 %}
                    <div class="col-2">
-                       <img src="images/exc.jpg" alt="">
+                       <img src="{{crop.image.url}}" alt="">
                    </div>
                    <div class="col-2">
-                       <p>Biding Aviliable on Gourmet mushrooms</p>
-                       <h1>Gourmet mushrooms</h1>
+                       <p>Biding Available on {{crop.name}}</p>
+                       <h1>{{crop.name}}</h1>
                        <small>
-                        Gourmet mushrooms, such as oyster and shiitake, are one of the best cash crops for small growers. Although they are traditionally grown on logs outdoors, and still are in many areas, now both can be grown indoors in bags, using straw or sawdust instead of logs.
+                        {{ crop.description }}
                        </small>
+                       <br>
                        <a href="" class="btn">Bid Now &#8594 </a>
                    </div>
+                   {% endif %}
                </div>
+               {% endfor %}
            </div>
        </div>
 <!----------testimonial---------->
@@ -206,7 +139,7 @@
                <div class="row">
                    <div class="col-3">
                        <i class="fa fa-quote-left"></i>
-                      <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ut quae animi harum fugiat delectus possimus corrupti iusto illo ratione, reiciendis, iste ipsum, dicta eum quisquam? Minus tenetur provident voluptates laboriosam fuga. Harum, aut itaque magnam aspernatur molestias cumque! Nostrum dolorum, veritatis nobis temporibus nam autem aperiam! Eos voluptas minus ab?</p> 
+                      <p> Very cheap vegetables with premium quality. buy at Crop Shop!</p> 
                       <div class="rating">
                         <i class="fa fa-star" ></i>
                         <i class="fa fa-star" ></i>
@@ -214,33 +147,33 @@
                         <i class="fa fa-star" ></i>
                         <i class="fa fa-star-o"></i>
                      </div>
-                     <img src="images/user-1.png" alt="">
+                     <img src="{% static 'user-1.png'%}" alt="">
                      <h3>XYZ</h3>
                    </div>
                    <div class="col-3">
                     <i class="fa fa-quote-left"></i>
-                   <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ut quae animi harum fugiat delectus possimus corrupti iusto illo ratione, reiciendis, iste ipsum, dicta eum quisquam? Minus tenetur provident voluptates laboriosam fuga. Harum, aut itaque magnam aspernatur molestias cumque! Nostrum dolorum, veritatis nobis temporibus nam autem aperiam! Eos voluptas minus ab?</p> 
+                   <p>We can get pulses at such low cost then market, I'm glad to use Crop Shop</p> 
                    <div class="rating">
                      <i class="fa fa-star" ></i>
                      <i class="fa fa-star" ></i>
                      <i class="fa fa-star" ></i>
                      <i class="fa fa-star" ></i>
-                     <i class="fa fa-star-o"></i>
+                     <i class="fa fa-star"></i>
                   </div>
-                  <img src="images/user-2.png" alt="">
+                  <img src="{% static 'user-2.png'%}" alt="">
                   <h3>XYZ</h3>
                 </div>
                 <div class="col-3">
                     <i class="fa fa-quote-left"></i>
-                   <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ut quae animi harum fugiat delectus possimus corrupti iusto illo ratione, reiciendis, iste ipsum, dicta eum quisquam? Minus tenetur provident voluptates laboriosam fuga. Harum, aut itaque magnam aspernatur molestias cumque! Nostrum dolorum, veritatis nobis temporibus nam autem aperiam! Eos voluptas minus ab?</p> 
+                   <p>Amazing Experience!</p> 
                    <div class="rating">
                      <i class="fa fa-star" ></i>
                      <i class="fa fa-star" ></i>
                      <i class="fa fa-star" ></i>
                      <i class="fa fa-star" ></i>
-                     <i class="fa fa-star-o"></i>
+                     <i class="fa fa-star"></i>
                   </div>
-                  <img src="images/user-3.png" alt="">
+                  <img src="{% static 'user-3.png'%}" alt="">
                   <h3>XYZ</h3>
                 </div>
                </div>
@@ -254,13 +187,13 @@
             <div class="footer-col-1">
                 <h3>Download Our App</h3>
                 <p>Download App for Android and ios mobile phones</p>
-                <div class="app-logo">
-                    <img src="images/play-store.png">
-                    <img src="images/play-store.png">
+                <div class="{% static 'app-logo'%}">
+                    <img src="{% static 'play-store.png'%}">
+                    <img src="{% static 'app-store.png'%}">
                 </div>
             </div>
             <div class="footer-col-2">
-                <img src="images/logo-removebg-preview.png" alt="">
+                <img src="{% static 'logo-removebg-preview.png'%}" alt="">
                 <p>Our Purpose is to Make the crops of Farmers to reach naitonwide</p>
             </div>
             <div class="footer-col-3">

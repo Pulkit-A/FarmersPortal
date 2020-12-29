@@ -5,4 +5,4 @@ from .models import Crop
 class CropAdmin(admin.ModelAdmin):
     list_display = ('name', 'msp', 'stock', 'location')
 
-admin.site.register(Crop)
+admin.site.register(Crop, CropAdmin)
