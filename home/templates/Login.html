@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    {% load static %}
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="{% static 'style.css' %}">
     <title>Login</title>
 </head>
 <body>
@@ -11,41 +12,29 @@
         <div class="form-box">
             <div class="button-box">
                 <div id="btn"></div>
-                <a href="index.html"><button type="button" class="toggle-btn" onclick="login()">Log In</button></a>
-                <button type="button" class="toggle-btn" onclick="register()">Register</button>
+                <a href="/login/"><button type="button" class="toggle-btn" onclick="login()">Log In</button></a>
+                <a href="/register/"><button type="button" class="toggle-btn" onclick="register()">Register</button></a>
             
             </div>
             <div class="social-icons">
-                <img src="images/fb.png" >
-                <img src="images/tw.png" >
-                <img src="images/gp.png" >
+                <img src="{% static 'fb.png' %}" >
+                <img src="{% static 'tw.png' %}" >
+                <img src="{% static 'gp.png' %}" >
             </div>
+            {% csrf_token %}
             <form id="login" class="input-group">
-            <input type="text" class="input-field" placeholder="User Id" required>
-            <input type="text" class="input-field" placeholder="Enter Password" required>
+            <input type="text" class="input-field" name="username" placeholder="User Id" required>
+            <input type="text" class="input-field" name="password" placeholder="Enter Password" required>
             <input type="checkbox" class="chech-box"><span>Remember Password</span>
             <button type="submit" class="submit-btn">Log in</button>
             </form>
-            <form id="register" class="input-group">
-                <input type="text" class="input-field" placeholder="User Id" required>
-                <input type="email" class="input-field" placeholder="Enter Id" required>
-                <input type="text" class="input-field" placeholder="Enter Password" required>
-                <input type="checkbox" class="chech-box"><span>I agree to the terms & conditions</span>
-                <button type="submit" class="submit-btn">Register</button>
-                </form>
         </div>
         
     </div>
     <script>
         var x = document.getElementById("login");
-        var y = document.getElementById("register");
-        var z = document.getElementById("btn");
+        var y = document.getElementById("btn");
 
-        function register(){
-            x.style.left = "-400px";
-            y.style.left = "50px";
-            z.style.left = "110px";
-        }
         function login(){
             x.style.left = "50px";
             y.style.left = "450px";

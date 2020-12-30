@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'sstyle.css' %}">
+    <title>Products</title>
+</head>
+<body>
+    <div class="header">
+        <div class="container"></div>
+    
+        <div class="navbar">
+            <div class="logo">
+                <img src="{% static 'logo-removebg-preview.png' %}" width="125px" alt="">
+    
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/crops/">Crops</a></li>
+                    <li><a href="">About</a></li>
+                    <li><a href="/policies/">Policies</a></li>
+                    <li><a href="/learning/">Education</a></li>
+                    <li><a href="">Account</a></li>
+                    
+                </ul>
+            </nav>
+            <a href="/cart/"><img src="{% static 'cart.png' %}" width="30px" height="30px"></a>
+        </div>
+    <h1 id="our"><u>Products</u></h1>
+    <div id="info">
+{% for crop in rcrops %}
+<div class="img">
+    <img src="{{ crop.image.url }}">
+    <div class="img-desc">
+        <h4><b>Name:</b> {{ crop.name }}</h4>
+        <p><b>MSP:</b>{{ crop.msp }}</p>
+        <button>Bid Now</button>
+    </div>
+</div>
+{% endfor %}
+<!-------------footer--------------->
+<div class="footer">
+    <div class="container">
+        <div class="row">
+            <div class="footer-col-1">
+                <h3>Download Our App</h3>
+                <p>Download App for Android and ios mobile phones</p>
+                <div class="app-logo">
+                    <img src="{% static 'play-store.png' %}">
+                    <img src="{% static 'play-store.png' %}">
+                </div>
+            </div>
+            <div class="footer-col-2">
+                <img src="{% static 'logo-removebg-preview.png' %}" alt="">
+                <p>Our Purpose is to Make the crops of Farmers to reach naitonwide</p>
+            </div>
+            <div class="footer-col-3">
+                <h3>Useful Links</h3>
+                <ul>
+                    <li>Coupons</li>
+                    <li>Blog Post</li>
+                    <li>Refund Policy</li>
+                    <li>Join Affiliate</li>
+                </ul>
+            </div>
+            <div class="footer-col-4">
+                <h3>Follow us</h3>
+                <ul>
+                    <li>Facebook</li>
+                    <li>Twitter</li>
+                    <li>Instagram</li>
+                    <li>Youtube</li>
+                </ul>
+            </div>
+        </div>
+        <hr>
+        <p class="copyright">©Copyright 2020 - Code Breakers</p>
+    </div>
+</div>
+    
+</body>
+</html>

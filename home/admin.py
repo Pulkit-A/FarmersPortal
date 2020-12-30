@@ -1,3 +1,8 @@
 from django.contrib import admin
+from .models import CropOrder
 
-# Register your models here.
+
+class CropOrderAdmin(admin.ModelAdmin):
+    list_display = ('name', 'productID', 'cost', 'qty')
+
+admin.site.register(CropOrder, CropOrderAdmin)
